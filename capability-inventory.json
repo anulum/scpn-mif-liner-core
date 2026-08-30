@@ -1,0 +1,13 @@
+{
+  "capabilities": [],
+  "claims": [],
+  "evidence_maturity": "architecture_only",
+  "implemented_capability_count": 0,
+  "project": "SCPN-MIF-LINER-CORE",
+  "schema": "scpn.capability-inventory.v1",
+  "schema_version": "1.0.0",
+  "source": {
+    "manifest_path": "reactor-domain.json",
+    "manifest_sha256": "bf2f36a01d674c5e56d66c50fa377ca41dc045e00214043f750fbda4526d7cdb"
+  }
+}
