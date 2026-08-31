@@ -11,8 +11,10 @@
 A :class:`DeviceConfiguration` composes a validated material liner and
 magnetised target under the single registry identifier this repository
 owns. The liner class and target premagnetisation are hard invariants;
-an implosion velocity beyond the slow material-liner regime is flagged
-(Moses, Krakowski & Miller, LA-7686-MS, 1979). Serialisation is
+an implosion velocity beyond the slow material-liner branch — of order
+10^2 m/s at NRL, contrasted with the 10^3-10^4 m/s fast metal-shell
+branch — is flagged (Moses, Krakowski & Miller, LA-7686-MS, 1979,
+Introduction). Serialisation is
 canonical (sorted keys, no NaN or infinity accepted anywhere) and the
 SHA-256 digest of those bytes identifies the exact parameter set. The
 registry binding is a data pin only — this package never imports SCPN
@@ -31,7 +33,7 @@ from scpn_mif_liner_core.errors import DeviceConfigurationError
 from scpn_mif_liner_core.parameters import MagnetisedTarget, MaterialLiner
 
 OWNED_CONFIGURATIONS: Final = ("mechanical_or_liquid_liner_mif",)
-SLOW_LINER_MAX_VELOCITY_KM_S: Final = 30.0
+SLOW_LINER_MAX_VELOCITY_KM_S: Final = 1.0
 HEX_DIGEST: Final = re.compile(r"^[0-9a-f]{64}$")
 
 

@@ -33,7 +33,7 @@ def synthetic_liner(**overrides: Any) -> MaterialLiner:
     values: dict[str, Any] = {
         "kind": "liquid",
         "inner_radius_m": 0.2,
-        "implosion_velocity_km_s": 2.0,
+        "implosion_velocity_km_s": 0.2,
     }
     values.update(overrides)
     return MaterialLiner(**values)
@@ -66,7 +66,7 @@ def test_both_liner_kinds_construct() -> None:
 def test_specific_kinetic_energy_formula() -> None:
     """The specific kinetic energy follows ``v^2 / 2`` exactly."""
     assert synthetic_liner().specific_kinetic_energy_j_kg() == pytest.approx(
-        0.5 * (2.0e3) ** 2
+        0.5 * (0.2e3) ** 2
     )
 
 

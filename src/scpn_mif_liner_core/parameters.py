@@ -10,8 +10,9 @@
 
 The derived quantity implements standard mechanics and nothing more:
 the liner specific kinetic energy ``e = v^2 / 2``. It is a rough
-consistency instrument with documented applicability bounds (slow-liner
-regime; Moses, Krakowski & Miller, LA-7686-MS, 1979); no claim about
+consistency instrument with documented applicability bounds (the slow
+~10^2 m/s liner branch; Moses, Krakowski & Miller, LA-7686-MS, 1979,
+Introduction); no claim about
 any real machine follows from it.
 """
 

@@ -120,7 +120,7 @@ What is exercised, all under the 100 % statement-and-branch coverage gate:
 - A reference plan mirroring canonical practice with synthetic
   declarations: liner-arrival train, compression trajectory, liner-asymmetry set, synthetic oscillator, each bound to its clock domain.
 - Documented advisory band and timing checks with their sources stated
-  in the code: slow-liner asymmetry bands of 1 kHz–10 MHz and µs-scale arrival timing (LA-7686-MS 1979); findings are reported, never clamped.
+  in the code: the declared slow-liner asymmetry design band 1 kHz–10 MHz and µs-scale arrival-timing design bound — synthetic bounds for the ~10^2 m/s slow branch, whose split from the 10^3–10^4 m/s fast branch is documented in the LASL fast-liner assessment (LA-7686-MS 1979); findings are reported, never clamped.
 - Canonical serialisation (sorted keys, NaN/infinity rejected on both
   emit and parse), SHA-256 digest identity, and a strict round-trip
   parser that refuses unknown fields.

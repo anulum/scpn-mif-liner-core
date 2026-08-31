@@ -939,9 +939,10 @@ class DiagnosticPlan:
                         message=(
                             "declared liner-asymmetry band "
                             f"{channel.max_signal_frequency_hz:.1f} "
-                            "Hz is outside the slow-liner "
-                            "asymmetry range 1 kHz-10 MHz "
-                            "(LA-7686-MS 1979)"
+                            "Hz is outside the declared slow-liner "
+                            "asymmetry design band 1 kHz-10 MHz "
+                            "(synthetic bound; slow branch per "
+                            "LA-7686-MS 1979)"
                         ),
                     )
                 )
@@ -955,9 +956,10 @@ class DiagnosticPlan:
                         field=f"channels[{channel.identifier}].timing_uncertainty_s",
                         message=(
                             f"timing uncertainty {channel.timing_uncertainty_s:.2e} s"
-                            " is coarser than the us-scale "
-                            "liner-arrival timing of slow liners "
-                            "(LA-7686-MS 1979)"
+                            " is coarser than the declared "
+                            "us-scale arrival-timing design bound "
+                            "for slow liners (synthetic bound; "
+                            "slow branch per LA-7686-MS 1979)"
                         ),
                     )
                 )
@@ -968,8 +970,10 @@ class DiagnosticPlan:
                         message=(
                             "acquisition window "
                             f"{channel.acquisition_duration_s:.2e} s is "
-                            "longer than the slow-liner implosion scale of up "
-                            "to ~10 ms (LA-7686-MS 1979)"
+                            "longer than the ~10 ms slow-liner "
+                            "implosion scale implied by the "
+                            "~10^2 m/s slow branch "
+                            "(LA-7686-MS 1979)"
                         ),
                     )
                 )

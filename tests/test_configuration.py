@@ -34,7 +34,7 @@ REGISTRY = RegistryBinding(version="1.0.0", digest_sha256="0" * 64)
 
 def synthetic_configuration(
     identifier: str = "mechanical_or_liquid_liner_mif",
-    implosion_velocity_km_s: float = 2.0,
+    implosion_velocity_km_s: float = 0.2,
 ) -> DeviceConfiguration:
     """Build a valid synthetic configuration with optional overrides."""
     return DeviceConfiguration(

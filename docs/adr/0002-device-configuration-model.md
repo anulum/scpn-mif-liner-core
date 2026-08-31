@@ -41,10 +41,11 @@ repository-level `evidence_maturity` semantics follow the family pilot.
 4. Derived quantity from standard mechanics: the liner specific kinetic
    energy ``e = v^2 / 2``. Advisory finding, reported by
    `consistency_report()` and never clamped: an implosion velocity
-   above ``~30 km/s`` — material-liner (LINUS-class) studies occupy the
-   slow branch of magneto-inertial fusion, of order 1-10 km/s
+   above ``~1 km/s`` — material-liner (LINUS-class) studies occupy the
+   slow branch of magneto-inertial fusion, of order 10^2 m/s,
+   contrasted with the 10^3-10^4 m/s fast metal-shell branch
    (R. W. Moses, R. A. Krakowski, R. L. Miller, Los Alamos report
-   LA-7686-MS, 1979).
+   LA-7686-MS, 1979, Introduction).
 5. Repository-level `evidence_maturity` = the highest state claimed by
    any capability entry; per-capability states are the authoritative
    claim surface.

@@ -50,7 +50,7 @@ bind. Four candidates apply to the configuration this repository owns: `magneto_
 4. Timing is fail-closed where physics fixes the bound: the Nyquist
    criterion for cyclic channels, a positive event-timing bound, and
    clock resolution at or below that bound. The device-typical checks
-   are advisory only: the slow-liner asymmetry range 1 kHz–10 MHz and the µs-scale liner-arrival timing (LASL fast-liner assessment, LA-7686-MS, 1979).
+   are advisory only: the declared slow-liner asymmetry design band 1 kHz–10 MHz and the µs-scale arrival-timing design bound (synthetic bounds for the ~10^2 m/s slow branch; branch split documented in the LASL fast-liner assessment, LA-7686-MS, 1979, Introduction).
 5. The reference plan mirrors canonical practice with synthetic
    declarations: a liner-arrival event train (event relative against the liner drive trigger), a compression-trajectory set (noncyclic), a liner-asymmetry mode set (derived cyclic against the facility clock), and the model-owned synthetic oscillator (simulation clock). Every applicable candidate must be
    planned or explicitly deferred with a reason; every channel is

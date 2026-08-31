@@ -12,6 +12,17 @@ SCPN MIF Liner Core — CHANGELOG
 
 ## [Unreleased]
 
+### Fixed
+
+- Corrected the slow-branch liner attribution against the cited LASL
+  assessment (LA-7686-MS, 1979): the slow material/liquid-liner branch
+  runs at ~10^2 m/s (the 1–10 km/s figures belong to the fast
+  metal-shell branch), so the slow-regime velocity advisory bound moved
+  from 30 km/s to 1 km/s and the diagnostic advisory texts now label
+  the asymmetry band and arrival-timing bound as declared synthetic
+  design bounds for that branch rather than as figures taken from the
+  report.
+
 ### Added
 
 - Modular hosted-workflow surface per the ecosystem workflow-modularity
