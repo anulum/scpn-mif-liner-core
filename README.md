@@ -8,6 +8,11 @@ Contact: www.anulum.li | protoscience@anulum.li
 SCPN MIF Liner Core — README
 -->
 
+<div align="center">
+  <img src="docs/assets/repo_header.png"
+       alt="SCPN MIF Liner Core — Matter As The Compressor">
+</div>
+
 # SCPN MIF Liner Core
 
 Governed device-family repository for mechanical- and liquid-liner
