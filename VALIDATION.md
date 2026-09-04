@@ -272,3 +272,76 @@ Bounded claims — what is NOT claimed:
 - No yield, gain, reactivity, confinement or breakeven statement is made,
   and no value describes or validates a real machine. Reproducing a
   printed number is an anchor on the arithmetic and nothing further.
+
+## Device 3D model
+
+Evidence record of the `device_3d_model` capability
+(`computational_prototype`; design record: `docs/adr/0006-device-3d-and-cad-models.md`).
+
+What is exercised, all under the 100 % statement-and-branch coverage gate:
+
+- **Five bodies in a fixed order**, each closed and outward-oriented: the
+  target plasma in the bore, the liner shell, the coaxial return conductor
+  and the two end electrodes. The bodies nest the way the current path
+  does, the electrodes meet the liner exactly at its ends, and each
+  electrode spans the full outer radius — a feed narrower than the return
+  path would not close the circuit.
+- **Every derived radius is the previous one plus a declared thickness**,
+  and the accessors validate the bore they are handed rather than trusting
+  it. Every envelope field is refused when zero, negative, infinite or
+  not-a-number, and the parser refuses an unknown key, a missing field and
+  a value of the wrong type, booleans included.
+- **The geometry and the physics describe one liner.** The tier-G1 liner
+  volume divided by the physics capability's liner mass over its density
+  is the inscribed-polygon ratio of the segment count, asserted at 8, 64
+  and 512 segments to a relative tolerance of 1e-12; measured agreement is
+  1e-14. The only difference between the two capabilities is the
+  tessellation deficit the group already characterises.
+- Canonical serialisation, digest identity, both input digests bound into
+  the record, and a body set out of order refused at construction.
+
+Anchoring — what is printed and what is declared:
+
+- **Printed** by LA-7686-MS and recovered **from the built bodies**: the
+  liner's inner radius `0.2 m` and its outer radius `0.203 m` as vertex
+  coordinates of the liner mesh, and its length `0.2 m` as the mesh's
+  bounding-box extent.
+- **Declared, and said to be declared**: the return conductor's gap and
+  thickness and the electrode thickness. The report prints nothing about
+  the current return path.
+
+## Device CAD model
+
+Evidence record of the `device_cad_model` capability
+(`computational_prototype`; same design record).
+
+What is exercised:
+
+- The same five bodies as exact solids, each checked fail-closed by the
+  library's evidence kernel: volume and area against their analytic closed
+  forms within the measure tolerance, the faceted volume within the
+  chord-deficit bound, and the faceted volume against the tier-G1 mesh of
+  the same design within the polygon-deficit bound.
+- Every body is a cylinder or an annular tube, so each has a well-defined
+  smallest circular radius and the deficit bound needs no special case
+  here.
+- Canonical record, pinned digest in the pinned back-end environment,
+  determinism across two builds, normalised STEP bytes whose digest is the
+  digest of the exported file, and refusals for a manifest of the wrong
+  schema or body count, for bodies out of order, for an invalid deflection
+  and for an inadmissible segment count.
+- The printed liner dimensions are recovered from the measured bounding
+  boxes of the solids the back-end built.
+
+Bounded claims — what is NOT claimed:
+
+- The geometry is the state **before** the implosion. No body moves and no
+  trajectory, deformation or instability is modelled; the record says so
+  in its own non-claims.
+- The current path is drawn as a coaxial return and two end feeds. The
+  power supply, the leads and the switching are not modelled.
+- STEP determinism is claimed inside one pinned back-end environment only,
+  never across back-end versions.
+- No engineering model, material property, load, field, neutronic quantity
+  or fabrication tolerance is carried, and no value describes or validates
+  a real machine.

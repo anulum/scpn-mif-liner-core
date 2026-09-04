@@ -8,12 +8,14 @@
 
 """Device capability models of the SCPN material-liner-MIF family.
 
-Public surface of the ``device_configuration_model`` and
-``diagnostic_clock_semantics`` and ``level0_device_physics`` capabilities at
+Public surface of the ``device_configuration_model``,
+``diagnostic_clock_semantics``, ``level0_device_physics``,
+``device_3d_model`` and ``device_cad_model`` capabilities at
 ``computational_prototype`` maturity: validated parameter objects,
 synthetic diagnostic and clock declarations aligned with the pinned SPO
-observability catalogue, documented consistency estimates, canonical
-serialisation with SHA-256 digests, and data-only pins to the SPO
+observability catalogue, the shell mechanics and ideal compressions of
+the liner, the device model at both tiers, canonical serialisation with
+SHA-256 digests, and data-only pins to the SPO
 registries. No claim about any real machine or diagnostic is made
 anywhere in this package.
 """
@@ -31,7 +33,20 @@ from scpn_mif_liner_core.configuration import (
     configuration_from_bytes,
     configuration_from_record,
 )
-from scpn_mif_liner_core.errors import DeviceConfigurationError, DiagnosticPlanError
+from scpn_mif_liner_core.errors import (
+    DeviceConfigurationError,
+    DeviceGeometryError,
+    DiagnosticPlanError,
+)
+from scpn_mif_liner_core.geometry import (
+    BODY_NAMES,
+    DeviceGeometry,
+    DeviceModel3D,
+    DeviceModelCAD,
+    build_device_cad,
+    build_device_model,
+    geometry_from_record,
+)
 from scpn_mif_liner_core.observability import (
     APPLICABLE_CANDIDATES,
     CATALOGUE_BINDING,
@@ -79,6 +94,7 @@ __version__: Final = "0.1.0.dev0"
 
 __all__ = [
     "APPLICABLE_CANDIDATES",
+    "BODY_NAMES",
     "CATALOGUE_BINDING",
     "LEVEL0_NON_CLAIMS",
     "LEVEL0_SCHEMA",
@@ -95,6 +111,10 @@ __all__ = [
     "DeferredCandidate",
     "DeviceConfiguration",
     "DeviceConfigurationError",
+    "DeviceGeometry",
+    "DeviceGeometryError",
+    "DeviceModel3D",
+    "DeviceModelCAD",
     "DiagnosticChannelPlan",
     "DiagnosticPlan",
     "DiagnosticPlanError",
@@ -111,12 +131,15 @@ __all__ = [
     "SemanticCarrier",
     "ShellInputs",
     "__version__",
+    "build_device_cad",
+    "build_device_model",
     "compression_state",
     "configuration_from_bytes",
     "configuration_from_record",
     "envelope_for_plan",
     "envelope_from_bytes",
     "envelope_from_record",
+    "geometry_from_record",
     "implosion_state",
     "level0_physics",
     "plan_from_bytes",

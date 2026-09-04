@@ -14,6 +14,16 @@
       "evidence_maturity": "computational_prototype",
       "evidence_pointer": "VALIDATION.md#level-0-device-physics",
       "identifier": "level0_device_physics"
+    },
+    {
+      "evidence_maturity": "computational_prototype",
+      "evidence_pointer": "VALIDATION.md#device-3d-model",
+      "identifier": "device_3d_model"
+    },
+    {
+      "evidence_maturity": "computational_prototype",
+      "evidence_pointer": "VALIDATION.md#device-cad-model",
+      "identifier": "device_cad_model"
     }
   ],
   "claims": [],
@@ -76,6 +86,13 @@
     "distribution": "scpn-reactor-kernels",
     "inventory_sha256": "4e3f85ff448b6ff86ff85cda007319c0edb31553d0e2874e0578da9fd4ede888",
     "kernels": [
+      "cad_brep_solids",
+      "cad_evidence",
+      "cad_faceting",
+      "cad_step_export",
+      "geometry_mesh_contract",
+      "geometry_primitives",
+      "geometry_unit_circle",
       "numerics_transcendental"
     ],
     "source_commit": "5bb26fd6bfd43acec34c3df9ef4c074532d671e4",

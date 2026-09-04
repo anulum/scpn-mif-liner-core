@@ -22,7 +22,7 @@ the `mechanical_or_liquid_liner_mif` configuration of the SCPN Phase
 Orchestrator reactor registry (material-liner compression).
 
 **Evidence maturity: `computational_prototype`** (per-capability; ADR 0002).
-Three capabilities are implemented: the device configuration model —
+Five capabilities are implemented: the device configuration model —
 validated parameter objects with documented consistency estimates,
 canonical serialisation, and a data-only SPO registry pin
 (evidence: `VALIDATION.md#device-configuration-model`) — and the
@@ -34,7 +34,11 @@ physics — the mechanics of the driven annular shell and what its
 convergence does to the field and the plasma by flux conservation and
 adiabatic compression, both recorded as upper bounds rather than
 predictions, anchored on the two design points a filed Los Alamos report
-prints (ADR 0005, evidence: `VALIDATION.md#level-0-device-physics`). No
+prints (ADR 0005, evidence: `VALIDATION.md#level-0-device-physics`); and
+the device model at both tiers — the target plasma, the liner shell and
+the coaxial current path that drives it, tessellated on the shared kernel
+library and built again as exact solids (ADR 0006, evidence:
+`VALIDATION.md#device-3d-model` and `VALIDATION.md#device-cad-model`). No
 parameter set, channel or number describes any real machine or
 diagnostic; the claim inventory is empty and verified by the domain
 validator.
