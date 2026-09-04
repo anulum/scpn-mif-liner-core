@@ -202,3 +202,73 @@ gate:
   domain (`clk_facility` root, `clk_shot` member); multi-domain rules
   are exercised by test-constructed plans. Scopes are declarations;
   `mapping_state` stays `unmapped`.
+
+## Level-0 device physics
+
+Evidence record of the `level0_device_physics` capability
+(`computational_prototype`; design record: `docs/adr/0005-level0-device-physics.md`).
+
+What is exercised, all under the 100 % statement-and-branch coverage gate:
+
+- **Shell mechanics.** The mass of the annular liner as the exact annulus
+  `rho pi ((r + d)^2 - r^2) l`, not the thin-shell approximation: the two
+  differ by `d / (2 r + d)`, which is 0.74 % at the filed design point and
+  comparable to the tolerance the energy anchor is asserted at, so
+  discarding it would eat most of that margin. A test asserts the
+  difference is exactly that fraction. From the mass follow the kinetic
+  energy at the declared velocity, the drive pressure `B^2 / 2 mu0` of the
+  target's initial field, and the characteristic time `r_0 / v`, which the
+  record names as a scale rather than a trajectory.
+- **Flux compression** `B(r) = B_0 (r_0 / r)^2` and **adiabatic
+  compression** `T(r) = T_0 (r_0 / r)^(2 (gamma - 1))`. Both are
+  conservation laws in their ideal limit and both are recorded as **upper
+  bounds**: a real liner has finite conductivity and loses flux, a real
+  compression radiates and conducts. The non-integer power goes through
+  the shared library's deterministic kernel rather than the platform's,
+  and a test asserts the two are the same call.
+- Every refusal branch: a radius, thickness, length, density or field that
+  is zero, negative, infinite or not-a-number; a convergence ratio that
+  does not converge, checked on **all three** compression relations
+  because a contract enforced by only some of the functions that need it
+  is not enforced; and an adiabatic index that would not heat.
+- Canonical serialisation, digest identity, digest stability, and digest
+  movement when the declared convergence moves.
+
+Anchoring — and how the velocity was recovered:
+
+- **Printed** by LA-7686-MS (Moses, Krakowski & Miller, Los Alamos, 1979),
+  Table II-I, for both design points: the initial liner inner radius
+  (0.2 m and 0.3 m), the initial liner thickness (3.0 mm and 4.5 mm), the
+  initial azimuthal field (13.0 T for both) and the initial liner energy
+  (0.336 GJ and 0.756 GJ). From the report's text: the liner is copper,
+  0.2 m long, and the implosion lasts 20 to 40 microseconds.
+- **The implosion velocity is not printed in a form the extraction
+  preserves.** Superscripts are lost, so it reads as "10 m/s" nearly
+  everywhere; one surviving sentence gives the range `10^3-10^4 m/s`. It
+  was settled against the table itself: at `1e4 m/s` the kinetic energy of
+  an annular copper shell of the printed radius, thickness and length
+  reproduces **both** printed energies to 0.83 %, and at `1e3 m/s` it is a
+  hundredfold too small. A test asserts the agreement, and a second test
+  asserts that the other candidate misses — evidence is only evidence when
+  the alternative fails.
+- A third printed statement checks the same recovery independently: the
+  characteristic time `r_0 / v` is 20 and 30 microseconds for the two
+  design points, and the report's abstract brackets the implosion at 20 to
+  40 microseconds.
+- The energy anchor is asserted at **one per cent, not exactly**, and the
+  reason is stated: the report rounds its energies to three figures and
+  never prints the copper density it used.
+- **Declared, and said to be declared**: the liner kind, the convergence
+  ratio, the adiabatic index, and everything about the target beyond its
+  initial field.
+
+Bounded claims — what is NOT claimed:
+
+- No equation of motion, equation of state or transport equation is
+  solved; every number is a closed-form evaluation on a declared point.
+- The compressed field is the perfect-conductor limit and the compressed
+  temperature the loss-free limit. Both are upper bounds, never
+  predictions, and the record says so in its own non-claims.
+- No yield, gain, reactivity, confinement or breakeven statement is made,
+  and no value describes or validates a real machine. Reproducing a
+  printed number is an anchor on the arithmetic and nothing further.

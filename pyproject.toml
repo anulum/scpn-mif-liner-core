@@ -18,6 +18,15 @@ requires-python = ">=3.12"
 license = "AGPL-3.0-or-later"
 dynamic = ["version"]
 
+# The shared kernel library is pinned to one immutable commit object: the
+# adiabatic temperature gain is a non-integer power, and a transcendental
+# evaluated by the platform would differ between back-ends. The same commit
+# and the kernel inventory are recorded in reactor-domain.json
+# (kernel_library) and a contract test proves the two pins agree.
+dependencies = [
+    "scpn-reactor-kernels @ git+https://github.com/anulum/scpn-reactor-kernels.git@5bb26fd6bfd43acec34c3df9ef4c074532d671e4",
+]
+
 [tool.setuptools.dynamic]
 version = { attr = "scpn_mif_liner_core.__version__" }
 
@@ -134,6 +143,9 @@ max-statements = 56
 # boolean is the case under test rather than a flag a caller might confuse
 # (scope of FBT001)
 "tests/test_observability_transformations.py" = ["FBT001"]
+# the same rule, and the same reason: the design point of the filed
+# report is the case under test and pytest supplies it by name
+"tests/test_physics_implosion.py" = ["FBT001"]
 # preflight executes fixed argument vectors of repository gates without a
 # shell and without untrusted input (scope of S603/S607)
 "tools/preflight.py" = ["S603", "S607"]

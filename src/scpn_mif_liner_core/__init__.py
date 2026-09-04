@@ -9,7 +9,7 @@
 """Device capability models of the SCPN material-liner-MIF family.
 
 Public surface of the ``device_configuration_model`` and
-``diagnostic_clock_semantics`` capabilities at
+``diagnostic_clock_semantics`` and ``level0_device_physics`` capabilities at
 ``computational_prototype`` maturity: validated parameter objects,
 synthetic diagnostic and clock declarations aligned with the pinned SPO
 observability catalogue, documented consistency estimates, canonical
@@ -55,6 +55,18 @@ from scpn_mif_liner_core.parameters import (
     MagnetisedTarget,
     MaterialLiner,
 )
+from scpn_mif_liner_core.physics import (
+    LEVEL0_NON_CLAIMS,
+    LEVEL0_SCHEMA,
+    LEVEL0_SCHEMA_VERSION,
+    CompressionState,
+    ImplosionState,
+    Level0Physics,
+    ShellInputs,
+    compression_state,
+    implosion_state,
+    level0_physics,
+)
 from scpn_mif_liner_core.plan_envelope import (
     PlanEnvelope,
     envelope_for_plan,
@@ -68,6 +80,9 @@ __version__: Final = "0.1.0.dev0"
 __all__ = [
     "APPLICABLE_CANDIDATES",
     "CATALOGUE_BINDING",
+    "LEVEL0_NON_CLAIMS",
+    "LEVEL0_SCHEMA",
+    "LEVEL0_SCHEMA_VERSION",
     "LINER_KINDS",
     "OWNED_CONFIGURATIONS",
     "SLOW_LINER_MAX_VELOCITY_KM_S",
@@ -75,6 +90,7 @@ __all__ = [
     "ClockKind",
     "ClockModel",
     "ClockRelation",
+    "CompressionState",
     "ConsistencyFinding",
     "DeferredCandidate",
     "DeviceConfiguration",
@@ -83,6 +99,8 @@ __all__ = [
     "DiagnosticPlan",
     "DiagnosticPlanError",
     "FrameKind",
+    "ImplosionState",
+    "Level0Physics",
     "MagnetisedTarget",
     "MaterialLiner",
     "ObservabilityBinding",
@@ -91,12 +109,16 @@ __all__ = [
     "ReferenceFrame",
     "RegistryBinding",
     "SemanticCarrier",
+    "ShellInputs",
     "__version__",
+    "compression_state",
     "configuration_from_bytes",
     "configuration_from_record",
     "envelope_for_plan",
     "envelope_from_bytes",
     "envelope_from_record",
+    "implosion_state",
+    "level0_physics",
     "plan_from_bytes",
     "plan_from_record",
     "verify_envelope",
