@@ -19,8 +19,9 @@ to cross its own initial radius.
 Every relation is elementary and closed form. The reference the anchor
 fixture is built against is the Fast Liner Reactor design point of
 R. W. Moses, R. A. Krakowski and R. L. Miller, LA-7686-MS (Los Alamos,
-1979), whose Table II-I prints the liner radius, thickness and field, and
-whose text prints the material, the length and the implosion velocity.
+1979), whose Table II-I (PDF p. 8) prints the liner radius, thickness and
+field, and whose text prints the material (PDF p. 18), the length and the
+implosion velocity (abstract, PDF p. 5).
 """
 
 from __future__ import annotations
@@ -37,11 +38,11 @@ from scpn_mif_liner_core.parameters import require_positive
 #: (1.256 637 062 12e-6). CODATA 2022 gives 1.256 637 061 27e-6; this value
 #: is 6.8e-10 higher relative to it.
 MU0: Final = 1.25663706212e-6
-#: Density of copper in kilograms per cubic metre, declared. The filed design
-#: point names copper as its liner material but prints no density; with this
-#: value the annular-shell energy is 0.83 % above both printed liner
-#: energies, inside the one per cent the energy anchor is asserted at (see
-#: ``VALIDATION.md``).
+#: Density of solid copper in kilograms per cubic metre, as the filed study
+#: prints it in its blast analysis (8.92e3 kg/m^3, PDF p. 45); the study does
+#: not say which density its liner energies used. With this value the
+#: annular-shell energy is 0.83 % above both printed liner energies, inside
+#: the one per cent the energy anchor is asserted at (see ``VALIDATION.md``).
 COPPER_DENSITY_KG_M3: Final = 8920.0
 #: Density of aluminium in kilograms per cubic metre, declared; the other
 #: common solid-liner material. No anchor depends on it.

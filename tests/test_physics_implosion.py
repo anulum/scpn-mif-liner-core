@@ -247,3 +247,8 @@ def test_the_vacuum_permeability_is_the_documented_edition() -> None:
     assert MU0 == 1.25663706212e-6
     offset = (MU0 - 1.25663706127e-6) / 1.25663706127e-6
     assert 6.7e-10 < offset < 6.9e-10
+
+
+def test_the_copper_density_is_the_printed_solid_copper_value() -> None:
+    """LA-7686-MS prints 8.92e3 kg/m^3 for solid copper (PDF p. 45)."""
+    assert COPPER_DENSITY_KG_M3 == 8.92e3

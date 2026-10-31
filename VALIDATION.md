@@ -239,15 +239,18 @@ What is exercised, all under the 100 % statement-and-branch coverage gate:
 Anchoring — and how the velocity was recovered:
 
 - **Printed** by LA-7686-MS (Moses, Krakowski & Miller, Los Alamos, 1979),
-  Table II-I, for both design points: the initial liner inner radius
-  (0.2 m and 0.3 m), the initial liner thickness (3.0 mm and 4.5 mm), the
-  initial azimuthal field (13.0 T for both) and the initial liner energy
-  (0.336 GJ and 0.756 GJ). From the report's text: the liner is copper,
-  0.2 m long, and the implosion lasts 20 to 40 microseconds.
-- **The implosion velocity is not printed in a form the extraction
-  preserves.** Superscripts are lost, so it reads as "10 m/s" nearly
-  everywhere; one surviving sentence gives the range `10^3-10^4 m/s`. It
-  was settled against the table itself: at `1e4 m/s` the kinetic energy of
+  Table II-I (PDF p. 8), for both design points: the initial liner inner
+  radius (0.2 m and 0.3 m), the initial liner thickness (3.0 mm and
+  4.5 mm), the initial azimuthal field (13.0 T for both) and the initial
+  liner energy (0.336 GJ and 0.756 GJ). From the report's text: the liner
+  is copper (PDF p. 18), 0.2 m long (abstract, PDF p. 5), and the
+  implosion lasts 20 to 40 microseconds (Introduction and Summary,
+  PDF p. 6). Page numbers are those of the filed PDF.
+- **The implosion velocity is printed and checked.** The extraction loses
+  most superscripts, so the body reads "10 m/s"; the abstract keeps the
+  exponent (`~10^4 m/s`, PDF p. 5) and the Introduction gives the
+  fast-liner range `10^3-10^4 m/s` (PDF p. 5). It was also checked
+  against the table itself: at `1e4 m/s` the kinetic energy of
   an annular copper shell of the printed radius, thickness and length
   reproduces **both** printed energies to 0.83 %, and at `1e3 m/s` it is a
   hundredfold too small. A test asserts the agreement, and a second test
@@ -255,11 +258,14 @@ Anchoring — and how the velocity was recovered:
   the alternative fails.
 - A third printed statement checks the same recovery independently: the
   characteristic time `r_0 / v` is 20 and 30 microseconds for the two
-  design points, and the report's abstract brackets the implosion at 20 to
-  40 microseconds.
+  design points, and the Introduction brackets the implosion at 20 to
+  40 microseconds (PDF p. 6).
 - The energy anchor is asserted at **one per cent, not exactly**, and the
   reason is stated: the report rounds its energies to three figures and
-  never prints the copper density it used.
+  does not say which copper density its liner energies used. It prints
+  8.92e3 kg/m^3 for solid copper in its blast analysis (PDF p. 45); with
+  that density the shell energy is 0.83 % above both rows, more than the
+  rounding explains.
 - **Declared, and said to be declared**: the liner kind, the convergence
   ratio, the adiabatic index, and everything about the target beyond its
   initial field.

@@ -13,7 +13,8 @@ nothing.
 
 The **anchor** pairs are the two design points of the Fast Liner Reactor
 study (R. W. Moses, R. A. Krakowski & R. L. Miller, LA-7686-MS, Los
-Alamos, 1979), whose Table II-I prints both columns.
+Alamos, 1979), whose Table II-I (PDF p. 8) prints both columns. Page
+numbers are those of the filed PDF (SHA-256 e26f8d34...).
 
 Printed by the source, and therefore anchor values:
 
@@ -26,16 +27,19 @@ Initial azimuthal field      13.0 T       13.0 T
 Initial liner energy         0.336 GJ     0.756 GJ
 ===========================  ===========  ============
 
-From the report's text rather than its table: the liner is **copper**, its
-length is **0.2 m**, the implosion velocity is **1e4 m/s** in both cases,
-and the implosion lasts **20 to 40 microseconds**.
+From the report's text rather than its table: the liner is **copper**
+(PDF p. 18), its length is **0.2 m** (abstract, PDF p. 5; PDF p. 24), the
+implosion velocity is **1e4 m/s** in both cases (abstract, PDF p. 5;
+PDF p. 24), and the implosion lasts **20 to 40 microseconds** (Introduction
+and Summary, PDF p. 6).
 
-**The velocity was recovered, not assumed.** The extraction of the report
-loses superscripts, so the velocity reads as "10 m/s" nearly everywhere;
-one surviving sentence gives the range ``10^3-10^4 m/s`` but not the
-design point. It was settled against the table: at ``1e4 m/s`` the kinetic
+**The velocity is printed, and checked.** The extraction of the report
+loses most superscripts, so the velocity reads as "10 m/s" in the body;
+the abstract keeps the exponent (``~10^4 m/s``, PDF p. 5) and the
+Introduction gives the fast-liner range ``10^3-10^4 m/s`` (PDF p. 5). It
+was also settled against the table: at ``1e4 m/s`` the kinetic
 energy of an annular copper shell of the printed radius, thickness and
-length reproduces both printed energies to 0.8 %, where ``1e3 m/s`` is a
+length reproduces both printed energies to 0.83 %, where ``1e3 m/s`` is a
 hundredfold too small. Two independent printed rows agreeing to under one
 per cent is the evidence, and the test asserts it at that tolerance.
 
@@ -56,7 +60,7 @@ from scpn_mif_liner_core.physics import COPPER_DENSITY_KG_M3, ShellInputs
 
 REGISTRY = RegistryBinding(version="1.0.0", digest_sha256="0" * 64)
 
-#: Initial liner inner radius printed by LA-7686-MS, Table II-I.
+#: Initial liner inner radius printed by LA-7686-MS, Table II-I (PDF p. 8).
 ANCHOR_LOW_YIELD_RADIUS_M = 0.2
 ANCHOR_HIGH_YIELD_RADIUS_M = 0.3
 #: Initial liner thickness printed by the same table.
@@ -67,16 +71,19 @@ ANCHOR_INITIAL_FIELD_T = 13.0
 #: Initial liner energy printed for each design point, in joules.
 ANCHOR_LOW_YIELD_ENERGY_J = 0.336e9
 ANCHOR_HIGH_YIELD_ENERGY_J = 0.756e9
-#: Implosion velocity, from the report's text; see the module docstring
-#: for how the exponent the extraction lost was recovered.
+#: Implosion velocity, printed in the abstract (PDF p. 5) and checked
+#: against the printed energies; see the module docstring.
 ANCHOR_IMPLOSION_VELOCITY_KM_S = 10.0
-#: Liner length, printed twice in the report's text.
+#: Liner length, printed in the abstract (PDF p. 5) and on PDF p. 24.
 ANCHOR_LINER_LENGTH_M = 0.2
-#: Implosion duration window printed in the report's abstract, in seconds.
+#: Implosion duration window printed in the Introduction and Summary
+#: (PDF p. 6), in seconds.
 ANCHOR_IMPLOSION_WINDOW_S = (20.0e-6, 40.0e-6)
-#: The report rounds its energies to three figures and never prints the
-#: copper density it used, so the energy anchor is asserted at one per
-#: cent rather than exactly. Measured agreement is 0.8 % on both rows.
+#: The report rounds its energies to three figures and does not say which
+#: copper density its liner energies used (it prints 8.92e3 kg/m^3 for
+#: solid copper in its blast analysis, PDF p. 45). With that density the
+#: annular-shell energy is 0.83 % above both printed rows, more than
+#: rounding explains, so the anchor is asserted at one per cent.
 ANCHOR_ENERGY_TOLERANCE = 0.01
 
 #: Declared: the report describes a mechanical metal pusher, but does not

@@ -116,8 +116,13 @@ SCPN MIF Liner Core — CHANGELOG
 
 - The physical constants of the implosion model name their editions: the
   vacuum permeability is the CODATA 2018 value (CODATA 2022 is 6.8e-10 lower
-  relative), and the copper and aluminium densities are declared values, not
-  taken from the filed design study. A test binds the permeability edition.
+  relative); the copper density is the solid-copper value the filed design
+  study prints in its blast analysis, and the aluminium density is declared.
+  Tests bind both.
+- The anchor values are bound to pages of the filed LA-7686-MS PDF, and two
+  statements about it are corrected: the abstract does print the implosion
+  velocity (about 1e4 m/s), and the 20 to 40 microsecond window is in the
+  Introduction, not the abstract.
 
 - `scpn_mif_liner_core.observability` is now a package with one module per
   responsibility — vocabulary, catalogue binding, frames, clocks, signals and

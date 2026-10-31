@@ -14,7 +14,7 @@ owns. The liner class and target premagnetisation are hard invariants;
 an implosion velocity beyond the slow material-liner branch — of order
 10^2 m/s at NRL, contrasted with the 10^3-10^4 m/s fast metal-shell
 branch — is flagged (Moses, Krakowski & Miller, LA-7686-MS, 1979,
-Introduction). Serialisation is
+Introduction, PDF p. 5). Serialisation is
 canonical (sorted keys, no NaN or infinity accepted anywhere) and the
 SHA-256 digest of those bytes identifies the exact parameter set. The
 registry binding is a data pin only — this package never imports SCPN
