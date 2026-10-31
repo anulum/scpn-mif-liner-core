@@ -411,10 +411,10 @@ class DiagnosticPlan:
                         message=(
                             "acquisition window "
                             f"{channel.acquisition_duration_s:.2e} s is "
-                            "longer than the ~10 ms slow-liner "
-                            "implosion scale implied by the "
-                            "~10^2 m/s slow branch "
-                            "(LA-7686-MS 1979)"
+                            "longer than the declared 10 ms "
+                            "slow-liner shot-duration bound "
+                            "(synthetic bound; slow branch per "
+                            "LA-7686-MS 1979)"
                         ),
                     )
                 )

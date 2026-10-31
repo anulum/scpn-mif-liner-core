@@ -202,6 +202,8 @@ def test_report_flags_window_beyond_device_ceiling() -> None:
     findings = plan.consistency_report()
     assert len(findings) == 1
     assert "acquisition window" in findings[0].message
+    assert "declared 10 ms" in findings[0].message
+    assert "implied" not in findings[0].message
 
 
 def test_report_flags_array_size_outside_common_range() -> None:
