@@ -236,3 +236,14 @@ def test_the_anchor_carries_the_printed_radius_thickness_and_field() -> None:
     assert state.drive_magnetic_pressure_pa == magnetic_pressure_pa(
         ANCHOR_INITIAL_FIELD_T
     )
+
+
+def test_the_vacuum_permeability_is_the_documented_edition() -> None:
+    """MU0 is the CODATA 2018 value; CODATA 2022 lies 6.8e-10 below it.
+
+    The 2022 reference is the value SciPy 1.18.1 serves and the current NIST
+    table prints (1.256 637 061 27e-6).
+    """
+    assert MU0 == 1.25663706212e-6
+    offset = (MU0 - 1.25663706127e-6) / 1.25663706127e-6
+    assert 6.7e-10 < offset < 6.9e-10

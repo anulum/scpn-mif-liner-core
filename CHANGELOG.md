@@ -12,6 +12,13 @@ SCPN MIF Liner Core — CHANGELOG
 
 ## [Unreleased]
 
+### Documentation
+
+- The physical constants of the implosion model name their editions: the
+  vacuum permeability is the CODATA 2018 value (CODATA 2022 is 6.8e-10 lower
+  relative), and the copper and aluminium densities are declared values, not
+  taken from the filed design study. A test binds the permeability edition.
+
 ### Fixed
 
 - `build_device_cad` raises `CadUnavailableError` when the optional CAD

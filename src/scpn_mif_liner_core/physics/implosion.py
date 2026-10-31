@@ -33,12 +33,18 @@ from scpn_mif_liner_core.configuration import DeviceConfiguration
 from scpn_mif_liner_core.errors import DeviceConfigurationError
 from scpn_mif_liner_core.parameters import require_positive
 
-#: Vacuum permeability, SI, CODATA.
+#: Vacuum permeability in N A^-2, the CODATA 2018 recommended value
+#: (1.256 637 062 12e-6). CODATA 2022 gives 1.256 637 061 27e-6; this value
+#: is 6.8e-10 higher relative to it.
 MU0: Final = 1.25663706212e-6
-#: Density of copper in kilograms per cubic metre; the material the filed
-#: design point names for its liner.
+#: Density of copper in kilograms per cubic metre, declared. The filed design
+#: point names copper as its liner material but prints no density; with this
+#: value the annular-shell energy is 0.83 % above both printed liner
+#: energies, inside the one per cent the energy anchor is asserted at (see
+#: ``VALIDATION.md``).
 COPPER_DENSITY_KG_M3: Final = 8920.0
-#: Density of aluminium, the other common solid-liner material.
+#: Density of aluminium in kilograms per cubic metre, declared; the other
+#: common solid-liner material. No anchor depends on it.
 ALUMINIUM_DENSITY_KG_M3: Final = 2700.0
 
 
