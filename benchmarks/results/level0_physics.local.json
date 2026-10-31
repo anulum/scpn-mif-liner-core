@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-10-31T05:30:29.463176+00:00",
+  "label": "local",
+  "parameters": {
+    "points": 20000,
+    "record_points": 2000,
+    "repeats": 20,
+    "warmup": 3
+  },
+  "platform": {
+    "commit": "a31002aad2a593b209f0276f793409a394f463f7",
+    "cpu_model": "11th Gen Intel(R) Core(TM) i5-11600K @ 3.90GHz",
+    "isolated_cores": false,
+    "load_average_1min_at_start": "2.64",
+    "machine": "x86_64",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "results": [
+    {
+      "backend": "python_floor",
+      "name": "closed_forms",
+      "stats": {
+        "max_us_per_point": 2.3853674,
+        "mean_us_per_point": 2.097228145,
+        "min_us_per_point": 1.91971945,
+        "p50_us_per_point": 2.0834192,
+        "p95_us_per_point": 2.2449793000000002,
+        "p99_us_per_point": 2.3853674,
+        "throughput_points_per_s": 479980.2171353706
+      },
+      "status": "measured"
+    },
+    {
+      "backend": "rust_native",
+      "name": "closed_forms",
+      "stats": null,
+      "status": "unavailable: this package has no native crate; the level-0 kernels use + - * / and one real power evaluated by the shared library's deterministic power kernel, and the native decision of audit plan Q01 awaits the owner"
+    },
+    {
+      "backend": "python_floor",
+      "name": "level0_record",
+      "stats": {
+        "max_us_per_point": 41.1403975,
+        "mean_us_per_point": 30.202131125,
+        "min_us_per_point": 26.1435335,
+        "p50_us_per_point": 28.6031905,
+        "p95_us_per_point": 40.280767999999995,
+        "p99_us_per_point": 41.1403975,
+        "throughput_points_per_s": 34961.13484263233
+      },
+      "status": "measured"
+    },
+    {
+      "backend": "rust_native",
+      "name": "level0_record",
+      "stats": null,
+      "status": "unavailable: this package has no native crate; the level-0 kernels use + - * / and one real power evaluated by the shared library's deterministic power kernel, and the native decision of audit plan Q01 awaits the owner"
+    }
+  ],
+  "schema": "scpn-mif-liner-core.level0-physics-benchmark.v1"
+}
